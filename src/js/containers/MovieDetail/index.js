@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MovieSearch from './MovieSearch';
+import MovieDetail from './MovieDetail';
 
 function MapStoreToProps(store) {
     return {
@@ -8,4 +8,4 @@ function MapStoreToProps(store) {
     };
   }
 
-  export default connect(MapStoreToProps)(MovieSearch);
+export default connect(MapStoreToProps)(MovieDetail);

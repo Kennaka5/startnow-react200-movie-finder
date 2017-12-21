@@ -1,18 +1,68 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import {movieSearchQuery, inputMovie} from './MovieSearchAction';
 
 
-class MovieSearch extends React.Component {
+export default class MovieSearch extends React.Component {
   constructor(props) {
     super(props);
+    this.handleMovieSearch = this.handleMovieSearch.bind(this);
+    this.handleInputMovie = this.handleInputMovie.bind(this);
+  }
+
+//create Handler for the go button to create the axios request
+  handleInputMovie(e) {
+    const {dispatch} = this.props
+    const { value } = e.target
+    console.log('HandleInputMovie', value)
+    dispatch(inputMovie(value))
+  }
+
+  handleMovieSearch(e) {
+    const { inputTitle, dispatch} = this.props
+    console.log('MovieSearchHandler', inputTitle)
+    dispatch(movieSearchQuery(inputTitle))
+  }
+
+  renderMovieCards(){
+    if (this.props.results.length < 1) {
+      return null
+    } 
+    return this.props.results.map(result => {
+      return <div key={result.Imdbid} className='pt-4'>
+            <li className='form-control'>
+              <img className='mw-5 mh-5' src={result.Poster} />      
+              <div className='text-right'>{result.Title}</div>
+              <div className='text-right'>{result.Year}</div>
+              <div>{result.Plot}</div>
+                  <a href= {`#/movie/${result.imdbID}`} className='text-right btn btn-primary'>More InFormation</a>
+            </li>
+            </div>
+    })
   }
 
   render() {
+    const { movieInput } = this.props 
     return (
       <div>
-        <h1>Movie Search Container</h1>
-      </div>
+        <h1
+          className='text-center pb-4'
+        >Movie Finder</h1>
+          <div className='input-group'>
+                    <input
+                        type="text"
+                        id="user"
+                        className="form-control"
+                        onChange={this.handleInputMovie}
+                    />
+                    <button onClick={this.handleMovieSearch}
+                    >Go</button>
+                </div>
+          <div>
+            {this.renderMovieCards()}
+          </div>
+        </div>
     )
   }
 }
-
-export default MovieSearch;

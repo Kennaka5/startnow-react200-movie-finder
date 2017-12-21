@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import MovieSearchReducer from './containers/MovieSearch/MovieSearchReducer';
 
 const reducers = combineReducers({
-  movieSearch: MovieSearchReducer
+  search: MovieSearchReducer
 });
 
 export default reducers;

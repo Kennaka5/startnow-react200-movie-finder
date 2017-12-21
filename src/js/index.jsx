@@ -17,7 +17,6 @@ const store = createStore(reducers, composeEnhancers(
 
 /* eslint-enable */
 
-
 render(
   <Provider store={ store }>
     <App />

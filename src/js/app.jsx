@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import MovieSearch from './containers/MovieSearch/index';
-import MovieDetail from './containers/MovieDetailContainer';
+import MovieDetail from './containers/MovieDetail/index';
 
 
 class App extends React.Component {
@@ -14,9 +14,11 @@ class App extends React.Component {
       <Router>
         <div className='container'> 
           <Route exact path='/' component={ MovieSearch } />
-          <Route path='/movie/:id' component={ MovieDetailContainer } />
+          <Route path='/movie/:id' component={ MovieDetail } />
         </div>
       </Router>
     )
   }
 }
+
+export default App;
