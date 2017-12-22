@@ -4,7 +4,15 @@ import MovieDetail from './MovieDetail';
 function MapStoreToProps(store) {
     return {
      results: store.search.results,
-     inputTitle: store.search.inputTitle
+     title: store.detail.title,
+     year: store.detail.year,
+     runtime: store.detail.runtime,
+     genre: store.detail.genre,
+     plot: store.detail.plot,
+     poster: store.detail.poster,
+     awards: store.detail.awards,
+     metaScoreRatings: store.detail.metaScoreRatings,
+     imdbRatings: store.detail.imdbRatings,
     };
   }
 

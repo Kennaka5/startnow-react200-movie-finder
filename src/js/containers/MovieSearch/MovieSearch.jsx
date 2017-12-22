@@ -30,14 +30,32 @@ export default class MovieSearch extends React.Component {
       return null
     } 
     return this.props.results.map(result => {
-      return <div key={result.Imdbid} className='pt-4'>
-            <li className='form-control'>
+      return <div key={result.Imdbid}
+                  className='pt-4'
+              >
+              <div className="card">
+                <div className="card-block">
+                <div className="row">
+                <div className="col-4">
+                <img id="poster" src={result.Poster}/>
+                </div>
+                <div className="col-4 pl-2">
+                  <h2 className="card-title">{result.Title}</h2>
+                      <h4 className="card-subtitle mb-2 pt-2 text-muted">{result.Year}</h4>
+                  </div>
+                  <div id="movieDetail" className="col-4">
+                  <a href= {`#/movie/${result.imdbID}`} id="button" className="mt-10 btn btn-primary">More Information</a>
+                  </div>
+                  </div>
+              </div>
+</div>
+            {/* <li className='form-control'>
               <img className='mw-5 mh-5' src={result.Poster} />      
               <div className='text-right'>{result.Title}</div>
               <div className='text-right'>{result.Year}</div>
               <div>{result.Plot}</div>
                   <a href= {`#/movie/${result.imdbID}`} className='text-right btn btn-primary'>More InFormation</a>
-            </li>
+            </li> */}
             </div>
     })
   }
