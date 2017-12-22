@@ -9,11 +9,7 @@
     "start": "npm run build && node server",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
-    "test": "npm run build && mocha test/setup.js test/*.spec.js",
-    "postinstall": "npm run less && webpack"
-  },
-  "engines": {
-    "node": "8.7.0"
+    "test": "npm run build && mocha test/setup.js test/*.spec.js"
   },
   "dependencies": {
     "axios": "^0.16.1",
