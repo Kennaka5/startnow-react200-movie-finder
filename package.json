@@ -1,10 +1,9 @@
 {
   "name": "movie-finder",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A new React project.",
   "main": "server/index.js",
   "scripts": {
-    
     "build": "npm run less && webpack",
     "start": "npm run build && node server",
     "less": "lessc src/css/style.less dist/css/style.css",
@@ -53,6 +52,7 @@
     "mocha": "^3.0.2",
     "nightmare": "^2.10.0",
     "react-addons-test-utils": "^15.6.0",
+    "react-redux": "^5.0.6",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0"
   }
