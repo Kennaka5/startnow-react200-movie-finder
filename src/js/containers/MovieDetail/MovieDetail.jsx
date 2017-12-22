@@ -1,5 +1,5 @@
 import React from 'react';
-import { movieDetailQuery } from "./movieDetailAction";
+import { movieDetailQuery } from "./MovieDetailAction";
 
 class MovieDetail extends React.Component {
   constructor(props) {
